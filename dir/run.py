@@ -10,14 +10,9 @@ def sockMerchant(n, ar):
     return total
 
 
-#######################
-#######################
-#######################
-steps = 8
 path = ["U", "D", "D", "D", "U", "D", "U", "U"]
 
 
-# Complete the 'countingValleys' function below.
 def countingValleys(s, p):
     sl = 0
     bsl = False
@@ -37,4 +32,24 @@ def countingValleys(s, p):
     print(bsl_c)
 
 
-countingValleys(steps, path)
+#######################
+#######################
+#######################
+
+array = [3, 5, -4, 8, 11, 1, -1, 6]
+
+target = 10
+
+
+def twoNumberSum(a, t):
+    res = list()
+    for i, e in enumerate(a):
+        if len(res) == 2:
+            break
+        for q in range(len(a)):
+            if e + a[q] == t and i != q:
+                res.append(e)
+                res.append(a[q])
+                break
+
+    return res
