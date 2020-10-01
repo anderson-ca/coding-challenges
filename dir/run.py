@@ -41,7 +41,8 @@ array = [3, 5, -4, 8, 11, 1, -1, 6]
 target = 10
 
 
-def twoNumberSum(a, t):
+# O(n^2) time | O(1) space
+def twoNumberSum0(a, t):
     res = list()
     for i, e in enumerate(a):
         if len(res) == 2:
@@ -53,3 +54,15 @@ def twoNumberSum(a, t):
                 break
 
     return res
+
+
+# O(n) time | O(n) space
+def twoNumberSum1(a, t):
+    nums = {}
+    for i in a:
+        x = t - i
+        if x in nums:
+            return [x, i]
+        else:
+            nums[num] = "not it"
+    return []
