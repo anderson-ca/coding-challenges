@@ -64,9 +64,6 @@ def twoNumberSum1(a, t):
     return []
 
 
-#######################
-#######################
-#######################
 a = [5, 1, 22, 25, 6, -1, 8, 10]
 b = [1, 6, -1, 10]
 c = ['A', "B"]
@@ -90,3 +87,21 @@ def isValidSubsequence(array, sequence):
         idA += 1
 
     return len(sequence) == idB
+
+
+#######################
+#######################
+#######################
+
+input = 123456
+
+def super_size(n):
+    # your code here
+    q = []
+    for i in str(n):
+        q.append(i)
+
+    return int(''.join(q.sort(reverse=True)))
+
+
+super_size(input)
