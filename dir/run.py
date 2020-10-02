@@ -32,10 +32,6 @@ def countingValleys(s, p):
     print(bsl_c)
 
 
-#######################
-#######################
-#######################
-
 array = [3, 5, -4, 8, 11, 1, -1, 6]
 
 target = 10
@@ -66,3 +62,31 @@ def twoNumberSum1(a, t):
         else:
             nums[num] = "not it"
     return []
+
+
+#######################
+#######################
+#######################
+a = [5, 1, 22, 25, 6, -1, 8, 10]
+b = [1, 6, -1, 10]
+c = ['A', "B"]
+
+fail_a = [5, 1, 22, 25, 6, -1, 8, 10]
+fail_b = [5, 1, 22, 25, 6, -1, 8, 10, 10]
+
+
+# definition - the sub-sequence list B should be derived
+# from sequence A by deleting some or none elements without
+# changing the order of the remaining elements in list A.
+# O(n) time | O(1) space
+def isValidSubsequence(array, sequence):
+    # Write your code here.
+    idA = 0
+    idB = 0
+
+    while idA < len(array) and idB < len(sequence):
+        if array[idA] == sequence[idB]:
+            idB += 1
+        idA += 1
+
+    return len(sequence) == idB
