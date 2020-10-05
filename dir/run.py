@@ -98,9 +98,26 @@ def logical_calc(array, op):
     return state
 
 
-def do_stuff(a, b):
+def counting_sheep(a, b):
     t = a, b if len(a) < len(b) else b, a
     pr
     res = lambda x: f"{x[0]}{x[1]}{x[0]}"
     return res(t)
 
+
+s = "aba"
+n = 10
+
+
+# print(n - n % len(s))
+
+
+def repeatedString(s, n):
+    n1 = n // len(s)
+    x = s.count("a")
+    x1 = n1 * x
+    x2 = s[:n % len(s)].count("a")
+    return x1 + x2
+
+
+print(repeatedString(s, n))
