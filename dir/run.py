@@ -10,9 +10,6 @@ def sockMerchant(n, ar):
     return total
 
 
-path = ["U", "D", "D", "D", "U", "D", "U", "U"]
-
-
 def countingValleys(s, p):
     sl = 0
     bsl = False
@@ -30,11 +27,6 @@ def countingValleys(s, p):
             bsl = False
 
     print(bsl_c)
-
-
-array = [3, 5, -4, 8, 11, 1, -1, 6]
-
-target = 10
 
 
 # O(n^2) time | O(1) space
@@ -64,17 +56,6 @@ def twoNumberSum1(a, t):
     return []
 
 
-a = [5, 1, 22, 25, 6, -1, 8, 10]
-b = [1, 6, -1, 10]
-c = ['A', "B"]
-
-fail_a = [5, 1, 22, 25, 6, -1, 8, 10]
-fail_b = [5, 1, 22, 25, 6, -1, 8, 10, 10]
-
-
-# definition - the sub-sequence list B should be derived
-# from sequence A by deleting some or none elements without
-# changing the order of the remaining elements in list A.
 # O(n) time | O(1) space
 def isValidSubsequence(array, sequence):
     # Write your code here.
@@ -87,9 +68,6 @@ def isValidSubsequence(array, sequence):
         idA += 1
 
     return len(sequence) == idB
-
-
-input = 123456
 
 
 def super_size(n):
@@ -118,3 +96,11 @@ def logical_calc(array, op):
         return f"input - {op} - not recognized"
 
     return state
+
+
+def do_stuff(a, b):
+    t = a, b if len(a) < len(b) else b, a
+    pr
+    res = lambda x: f"{x[0]}{x[1]}{x[0]}"
+    return res(t)
+
