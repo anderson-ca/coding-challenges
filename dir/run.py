@@ -101,15 +101,10 @@ def logical_calc(array, op):
 def counting_sheep(a, b):
     t = a, b if len(a) < len(b) else b, a
     pr
-    res = lambda x: f"{x[0]}{x[1]}{x[0]}"
+
+    def res(x): return f"{x[0]}{x[1]}{x[0]}"
+
     return res(t)
-
-
-s = "aba"
-n = 10
-
-
-# print(n - n % len(s))
 
 
 def repeatedString(s, n):
@@ -120,4 +115,55 @@ def repeatedString(s, n):
     return x1 + x2
 
 
-print(repeatedString(s, n))
+def expanded_form(num):
+    num = str(num)
+    dec = len(num) - 1
+    output = ""
+    for i in num:
+        if i != "0":
+            output += f"{i + ('0' * dec)} + "
+        dec -= 1
+    return output[:-2].strip()
+
+
+def to_nato(words):
+    nato = {
+        "a": "Alpha",
+        "b": "Bravo",
+        "c": "Charlie",
+        "d": "Delta",
+        "e": "Echo",
+        "f": "Foxtrot",
+        "g": "Golf",
+        "h": "Hotel",
+        "i": "India",
+        "j": "Juliet",
+        "k": "Kilo",
+        "l": "Lima",
+        "m": "Mike",
+        "n": "November",
+        "o": "Oscar",
+        "p": "Papa",
+        "q": "Quebec",
+        "r": "Romeo",
+        "s": "Sierra",
+        "t": "Tango",
+        "u": "Uniform",
+        "v": "Victor",
+        "w": "Whiskey",
+        "x": "Xray",
+        "y": "Yankee",
+        "z": "Zulu"
+    }
+    words = words.lower().replace(" ", "")
+
+    return
+    for w in words:
+        if w in nato.keys():
+            n_words.append(nato[w])
+        else:
+            n_words.append(w)
+
+    return ' '.join(n_words).strip()
+
+
