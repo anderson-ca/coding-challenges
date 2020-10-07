@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 # Complete the sockMerchant function below.
 def sockMerchant(n, ar):
     total = 0
@@ -167,3 +170,41 @@ def to_nato(words):
     return ' '.join(n_words).strip()
 
 
+def highest_rank(arr):
+    arr = list(set([(i, arr.count(i)) for i in arr]))
+    arr.sort(reverse=True, key=lambda x: x[1])
+    rem = lambda x: x[1] == arr[0][1]
+    norm_arr = list(filter(rem, arr))
+    norm_arr.sort(reverse=True, key=lambda x: x[0])
+    return norm_arr[0][0]
+
+
+# - O(n^2)
+def points(dice):
+    points = 0
+    counter = 0
+    counter2 = 0
+
+    straight = [int(i) for i in dice]
+    straight.sort()
+    for i in range(straight[0], (straight[-1] + 1)):
+        counter += i
+
+    is_straight = reduce(lambda x, y: x + y, straight)
+
+    dice2 = list(set([(side, dice.count(side)) for side in dice]))
+    dice2.sort(reverse=True, key=lambda k: k[1])
+
+    if len(dice2) == 1:
+        points = 50
+    elif len(dice2) == 2 and dice2[0][1] == 4:
+        points = 40
+    elif len(dice2) == 2 and dice2[1][1] == 2:
+        points = 30
+    elif len(dice2) == 5 and (counter == is_straight):
+        points = 20
+
+    return points
+
+
+print(points("62534"))
